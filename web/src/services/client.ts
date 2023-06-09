@@ -9,7 +9,6 @@ const  getServerSideProps = async () => {
         },
     };
     }catch (e) {
-        console.log(e)
         return {
             props: {
                 data: null,
