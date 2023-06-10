@@ -12,8 +12,6 @@ const removeDuplicates = (data) => {
             uniqueArr.push(currentItem);
         }
     }
-
-    console.log(uniqueArr);
     return uniqueArr;
 };
 
