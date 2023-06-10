@@ -1,5 +1,5 @@
-const removeDuplicates = (data) => {
-    const uniqueArr = [];
+const removeDuplicates = (data:[string,string][]) => {
+    const uniqueArr:[string,string][] = [];
 
     for (let i = 0; i < data.length; i++) {
         const currentItem = data[i];
@@ -12,8 +12,6 @@ const removeDuplicates = (data) => {
             uniqueArr.push(currentItem);
         }
     }
-
-    console.log(uniqueArr);
     return uniqueArr;
 };
 
