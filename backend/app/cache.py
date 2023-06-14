@@ -18,9 +18,7 @@ def generate_image_cache():
     headers = {'Accept-Encoding': 'gzip'}
     res = session.get(f"https://api.slingacademy.com/v1/sample-data/photos?offset={offset}&limit=20", headers=headers)
     image_data = process_image_cache(res)
-    print(image_data)
     cache["image_data"].extend(image_data)
-    print(cache["image_data"])
     return cache['image_data']
 
 

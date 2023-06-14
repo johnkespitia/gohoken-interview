@@ -23,13 +23,13 @@
 # Backend Challenge
 ## Requirements
 
-- [ ] The service should return a list of images from the remote service
-- [ ] The service is pretty slow, so do the necessary optimizations to make it faster
-- [ ] The API is really limited and only returns 10 images at a time. Implement a way to get more images from the remote service
-- [ ] Navigating into /docs it doesn't show great documentation for the API. Improve documentation for the API
+- [x] The service should return a list of images from the remote service
+- [x] The service is pretty slow, so do the necessary optimizations to make it faster
+- [x] The API is really limited and only returns 10 images at a time. Implement a way to get more images from the remote service
+- [x] Navigating into /docs it doesn't show great documentation for the API. Improve documentation for the API
 
 
 ### Bonus Points
-- [ ] Add some tests wherever you think it's necessary
-- [ ] Add a Dockerfile to run the service
+- [x] Add some tests wherever you think it's necessary
+- [x] Add a Dockerfile to run the service
 - [ ] Add a persistence layer to the cache
