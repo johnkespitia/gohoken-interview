@@ -11,10 +11,14 @@ services:
       - '/app/node_modules'
     ports:
       - 3000:3000
+    depends_on:
+      - back-app
   back-app:
     build:
       context: .
       dockerfile: docker/python.Dockerfile
+    depends_on:
+      - redis
     volumes:
       - './backend:/src'
     environment:

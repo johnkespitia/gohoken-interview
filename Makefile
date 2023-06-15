@@ -15,8 +15,11 @@ node-install: ## install all dependencies
 npm-install: ## add new dependency
 	$(RUN_APP) npm i $(c)
 
-front-ut: ## run test for frontend app
+front-ut: ## run unit test for frontend app
 	$(RUN_APP) npm run test
+
+front-e2e: ## run e2e test for frontend app
+	$(RUN_APP) npm run e2e
 
 restart-services:  ## restart all services
 	docker compose down && docker compose build && docker compose up -d

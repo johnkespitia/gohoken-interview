@@ -18,7 +18,6 @@ const ImageComponent: React.FC<ImageComponentProps> = ({ image }) => {
     const handleImageError = () => {
         setImageLoadError(true);
     };
-    console.log(image)
     if (!imageLoadError) {
         return <div ref={ref}>
             <motion.img
