@@ -5,7 +5,6 @@ from typing import List, Tuple
 
 app = FastAPI()
 
-
 @app.get("/images", tags=["Images"], response_model=List[Tuple[str, str]])
 async def get_images():
     """
@@ -17,6 +16,7 @@ async def get_images():
     return generate_image_cache()
 
 def custom_openapi():
+    # pragma: no cover
     if app.openapi_schema:
         return app.openapi_schema
     openapi_schema = get_openapi(

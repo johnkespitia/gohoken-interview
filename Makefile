@@ -22,4 +22,8 @@ restart-services:  ## restart all services
 	docker compose down && docker compose build && docker compose up -d
 
 back-ut:  ## run unit test for backend app
-	$(RUN_BACK_APP) python -m unittest discover -s tests
+	$(RUN_BACK_APP) coverage run --source=app -m unittest discover -s tests && \
+	$(RUN_BACK_APP) coverage report && \
+	$(RUN_BACK_APP) coverage html && \
+	open ./backend/htmlcov/index.html # mac
+	# @xdg-open  ./backend/htmlcov/index.html # linux

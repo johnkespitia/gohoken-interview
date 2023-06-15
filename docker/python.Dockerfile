@@ -7,6 +7,8 @@ WORKDIR /src
 # install poetry
 RUN pip install poetry
 RUN pip install redis
+RUN pip install coverage
+RUN pip install httpx
 
 
 # copy the pyproject.toml and poetry.lock to the working directory
