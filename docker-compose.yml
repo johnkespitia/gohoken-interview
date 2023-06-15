@@ -17,5 +17,13 @@ services:
       dockerfile: docker/python.Dockerfile
     volumes:
       - './backend:/src'
+    environment:
+      - REDIS_HOST=gohoken-interview-redis-1
+      - REDIS_PORT=6379
+      - REDIS_DB=0
     ports:
       - 8000:8000
+  redis:
+    image: redis
+    ports:
+      - 6379:6379

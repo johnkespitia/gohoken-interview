@@ -1,25 +1,21 @@
 import requests
-from cachetools import TTLCache
-
+from .redis import store_image_cache, get_all_images
 
 session = requests.Session()
 session.headers['Connection'] = 'keep-alive'
-cache = TTLCache(maxsize=1000, ttl=3600)
 def generate_image_cache():
     """
     Generate a list of images to cache from
     https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=20
     """
-    offset = 0
-    if "image_data" in cache:
-        offset = len(cache["image_data"])
-    else:
-        cache["image_data"] = []
+
+    images_list = get_all_images()
+    offset = len(images_list)
     headers = {'Accept-Encoding': 'gzip'}
     res = session.get(f"https://api.slingacademy.com/v1/sample-data/photos?offset={offset}&limit=20", headers=headers)
     image_data = process_image_cache(res)
-    cache["image_data"].extend(image_data)
-    return cache['image_data']
+    images_list.extend(image_data)
+    return images_list
 
 
 def process_image_cache(response: requests.Response):
@@ -49,6 +45,7 @@ def process_image_cache(response: requests.Response):
             title = image.get("title")
             if url and title:
                 image_data.append((url, title))
+                store_image_cache(url, title)
 
         # duplicate randomly 30% of images to simulate a larger cache
         # DO NOT REMOVE THIS IS PART OF THE FRONTEND TEST

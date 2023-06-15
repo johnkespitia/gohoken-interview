@@ -6,7 +6,8 @@ WORKDIR /src
 
 # install poetry
 RUN pip install poetry
-RUN pip install cachetools
+RUN pip install redis
+
 
 # copy the pyproject.toml and poetry.lock to the working directory
 COPY ./backend/pyproject.toml ./backend/poetry.lock ./
