@@ -1,3 +1,21 @@
+# SOLUTION APPLIED
+For running the project you must copy or rename `.env.local` to `.env` after that you can run the makefile commands to run the project 
+```
+help                           This help.
+node-install                   install all dependencies
+npm-install                    add new dependency
+front-ut                       run unit test for frontend app
+front-e2e                      run e2e test for frontend app
+restart-services               restart all services
+back-ut                        run unit test for backend app
+
+```
+## Run process
+- Run `make restart-services` to set up the environments and apps
+- Run `make back-ut` to run the unit test for python
+- Run `make front-ut` to run the unit test for nextjs
+- Run `make front-e2e` to run the e2e test for python
+
 # Interview Coding Problem - Repository Setup and Instructions
 
 Welcome to our interview coding problem. In this exercise, we have provided you with a repository that contains two separate applications: a web application built with Next.js and a python backend application. 

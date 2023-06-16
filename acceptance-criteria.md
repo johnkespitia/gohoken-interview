@@ -32,4 +32,4 @@
 ### Bonus Points
 - [x] Add some tests wherever you think it's necessary
 - [x] Add a Dockerfile to run the service
-- [ ] Add a persistence layer to the cache
+- [x] Add a persistence layer to the cache
