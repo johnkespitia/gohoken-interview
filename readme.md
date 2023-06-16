@@ -14,7 +14,7 @@ back-ut                        run unit test for backend app
 - Run `make restart-services` to set up the environments and apps
 - Run `make back-ut` to run the unit test for python
 - Run `make front-ut` to run the unit test for nextjs
-- Run `make front-e2e` to run the e2e test for python
+- Run `make front-e2e` to run the e2e test for nextjs
 
 # Interview Coding Problem - Repository Setup and Instructions
 
